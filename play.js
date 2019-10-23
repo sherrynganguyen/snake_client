@@ -7,9 +7,10 @@ const {connect} = require('./client');
 
 console.log('Connecting ...');
 connect();
-const handleUserInput = function (i) {
-  if ( i === '\u0003') {
-    return;
+const handleUserInput = function () {
+  stdin.on('input', key);
+  if ( key === '\u0003') {
+    process.exit();
   }
 };
 const setupInput = function() {
