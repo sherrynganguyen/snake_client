@@ -16,7 +16,10 @@ const handleUserInput = function () {
    });
    stdin.on('data', function(key) {
     if ( key === 's') { connection.write('Move: down') }
-   });   
+   });  
+   stdin.on('data', function(key) {
+    if ( key === 'q') { connection.write('Say: Pika') }
+   }); 
 };
 const setupInput = function(conn) {
   connection = conn;
